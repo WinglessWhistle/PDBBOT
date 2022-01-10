@@ -18,6 +18,11 @@ client.once('ready', () => {
 }
 )
 
+client.on('guildMemberAdd', guildMember =>{
+ 
+    guildMember.guild.channels.cache.get('756455138977251433').send(`Welcome <@${guildMember.user.id}>!`)
+});
+
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
